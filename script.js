@@ -231,35 +231,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
   contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('form-name')?.value.trim();
-    const email = document.getElementById('form-email')?.value.trim();
-    const message = document.getElementById('form-message')?.value.trim();
+    const nameInput = document.getElementById('form-name');
+    const emailInput = document.getElementById('form-email');
+    const messageInput = document.getElementById('form-message');
 
-    if (!name || !email || !message) {
-      showFormStatus('Please fill in all required fields.', 'error');
+    const name = nameInput?.value.trim();
+    const email = emailInput?.value.trim();
+    const message = messageInput?.value.trim();
+
+    if (!name) {
+      showFormStatus('Please enter your name.', 'error');
+      nameInput?.focus();
+      return;
+    }
+
+    if (!email) {
+      showFormStatus('Please enter your email address.', 'error');
+      emailInput?.focus();
       return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showFormStatus('Please enter a valid email address.', 'error');
+      showFormStatus('Please enter a valid email address (e.g., name@example.com).', 'error');
+      emailInput?.focus();
       return;
     }
 
-    // Submit Simulation
+    if (!message) {
+      showFormStatus('Please enter your message.', 'error');
+      messageInput?.focus();
+      return;
+    }
+
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = 'SENDING MESSAGE...';
+      submitBtn.innerHTML = 'SENDING...';
     }
 
-    setTimeout(() => {
-      showFormStatus('✓ Thank you! Your message has been sent successfully. (Note: Demo form — connect an email service like Web3Forms or Formspree for live backend delivery).', 'success');
-      contactForm.reset();
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'SEND MESSAGE →';
-      }
-    }, 800);
+    const formData = new FormData(contactForm);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: json
+    })
+      .then(async (response) => {
+        const resData = await response.json();
+        if (response.status === 200 && resData.success) {
+          showFormStatus("Message sent successfully. I'll get back to you soon.", 'success');
+          contactForm.reset();
+        } else {
+          showFormStatus(resData.message || 'Something went wrong while sending your message. Please try again.', 'error');
+        }
+      })
+      .catch((error) => {
+        showFormStatus('Unable to connect right now. Please try again or use the direct email link.', 'error');
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'SEND MESSAGE →';
+        }
+      });
   });
 
   function showFormStatus(msg, type) {

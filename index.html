@@ -112,7 +112,7 @@
         <div class="about-grid">
           <div class="about-text">
             <p>
-              I am a Semester II BCA student at C.M.P. Degree College, University of Allahabad. I specialize in building practical full-stack web applications and AI-powered products using React, FastAPI, and Anthropic Claude APIs.
+              I am a 2nd Year BCA Student at C.M.P. Degree College, University of Allahabad. I specialize in building practical full-stack web applications and AI-powered products using React, FastAPI, and Anthropic Claude APIs.
             </p>
             <p>
               Programming for me is an art of problem-solving—taking raw concepts and engineering them into polished, reliable tools that people actually enjoy using. I actively participate in hackathons, contribute to open-source software, and build standalone products to sharpen my engineering discipline.
@@ -478,21 +478,22 @@
           </div>
 
           <form id="contact-form" class="contact-form" novalidate>
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
             <div id="form-status" class="form-status"></div>
 
             <div class="form-group">
               <label for="form-name" class="form-label">YOUR NAME *</label>
-              <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Turner" required>
+              <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Alex Turner" required>
             </div>
 
             <div class="form-group">
               <label for="form-email" class="form-label">YOUR EMAIL *</label>
-              <input type="email" id="form-email" class="form-input" placeholder="e.g. alex@example.com" required>
+              <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. alex@example.com" required>
             </div>
 
             <div class="form-group">
               <label for="form-message" class="form-label">YOUR MESSAGE *</label>
-              <textarea id="form-message" class="form-textarea" placeholder="Tell me about your project, team, or internship role..." required></textarea>
+              <textarea id="form-message" name="message" class="form-textarea" placeholder="Tell me about your project, team, or internship role..." required></textarea>
             </div>
 
             <button type="submit" class="btn-cta" style="width:100%; font-size:1rem; padding:1rem;">

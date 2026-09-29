@@ -8,7 +8,7 @@ window.PORTFOLIO_DATA = {
     name: "PRATIK YADAV",
     role: "Full-Stack & AI Developer",
     location: "Prayagraj, India",
-    education: "BCA (Sem II) @ C.M.P. Degree College, Univ. of Allahabad",
+    education: "2nd Year BCA Student @ C.M.P. Degree College, Univ. of Allahabad",
     focus: "Full-Stack Web Apps, LLM APIs & AI Products",
     tagline: "CODE / CURIOSITY / ITERATION",
     heroTitle: "I BUILD USEFUL THINGS.",

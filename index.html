@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pratik Yadav | Full-Stack and AI Developer</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#0b0f14;--card:#121923;--line:#1f2a38;--text:#e6edf3;--mute:#8b98a9;--acc:#39d98a;--acc2:#4cc9f0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f5f7fa;--card:#fff;--line:#dde3ea;--text:#111827;--mute:#5b6675;--acc:#0a9f5f;--acc2:#0b7bb5}}
+:root[data-theme="dark"]{--bg:#0b0f14;--card:#121923;--line:#1f2a38;--text:#e6edf3;--mute:#8b98a9;--acc:#39d98a;--acc2:#4cc9f0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif}
+.mono{font-family:ui-monospace,"SF Mono",Consolas,monospace}
+main{max-width:920px;margin:0 auto;padding:0 20px 60px}
+nav{display:flex;gap:18px;padding:22px 0;font-size:14px;color:var(--mute);flex-wrap:wrap}
+nav a{color:var(--mute);text-decoration:none}nav a:hover{color:var(--acc)}
+.hero{padding:56px 0 40px}
+.tag{color:var(--acc);font-size:14px}
+h1{font-size:clamp(34px,7vw,56px);line-height:1.1;margin:10px 0 14px}
+h1 span{color:var(--acc)}
+.lead{color:var(--mute);max-width:620px;font-size:18px}
+.btns{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{padding:10px 18px;border:1px solid var(--acc);border-radius:8px;color:var(--acc);text-decoration:none;font-size:15px}
+.btn.fill{background:var(--acc);color:#04120b;font-weight:600}
+h2{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2);margin:56px 0 18px}
+h2::before{content:"> ";color:var(--acc)}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:6px 14px;border:1px solid var(--line);background:var(--card);border-radius:999px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card:hover{border-color:var(--acc)}
+.card h3{margin:0 0 6px;font-size:19px}
+.card p{color:var(--mute);margin:8px 0 12px;font-size:15px}
+.stack{font-size:12px;color:var(--acc2)}
+.badge{font-size:11px;color:var(--acc);border:1px solid var(--acc);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+a.link{color:var(--acc);text-decoration:none}
+footer{margin-top:60px;color:var(--mute);font-size:13px;border-top:1px solid var(--line);padding-top:20px}
+</style>
+</head>
+<body>
+<main>
+<nav class="mono"><a href="#about">about</a><a href="#skills">skills</a><a href="#projects">projects</a><a href="#contact">contact</a></nav>
+
+<section class="hero">
+<div class="tag mono">$ whoami</div>
+<h1>Pratik Yadav<br><span>Full-Stack &amp; AI Developer</span></h1>
+<p class="lead">BCA student building full-stack applications and AI-powered products. Currently seeking internship opportunities in full-stack software development and AI-related roles.</p>
+<div class="btns">
+<a class="btn fill" href="#projects">View Projects</a>
+<a class="btn" href="https://github.com/Pratik-y-SDE" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/pratik-yadav-07a961398/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</section>
+
+<section id="about">
+<h2 class="mono">about</h2>
+<p>I am a Semester II BCA student at C.M.P. Degree College, University of Allahabad. I build practical products with React, FastAPI and large language model APIs, and I take part in hackathons and open-source projects to learn from real codebases.</p>
+</section>
+
+<section id="skills">
+<h2 class="mono">skills</h2>
+<div class="skills">
+<span class="chip">React</span><span class="chip">Vite</span><span class="chip">FastAPI</span><span class="chip">LLM APIs</span><span class="chip">Anthropic Claude API</span><span class="chip">Node.js</span><span class="chip">REST APIs</span><span class="chip">Git &amp; GitHub</span><span class="chip">Open-Source Contribution</span>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="mono">projects</h2>
+<div class="grid">
+<div class="card">
+<h3>ExamLohe</h3>
+<div class="stack mono">React + Vite · FastAPI · Claude API</div>
+<p>A CBSE board exam preparation platform, built solo in under a week for the STEMINATE Hacks 2026 hackathon.</p>
+</div>
+<div class="card">
+<h3>STORMTRACKER</h3>
+<div class="stack mono">Cyclone detection</div>
+<p>A cyclone detector built for the Code for Community Hackathon (CMP HackSquad x GDG Prayagraj), refined across three successive versions.</p>
+</div>
+<div class="card">
+<h3>OpenCluely <span class="badge mono">Open Source</span></h3>
+<div class="stack mono">Kotlin language support</div>
+<p>Added Kotlin as a supported coding language in TechyCSR/OpenCluely (PR #59).</p>
+<a class="link mono" href="https://github.com/TechyCSR/OpenCluely" target="_blank" rel="noopener">view repository &rarr;</a>
+</div>
+<div class="card">
+<h3>FreeAPI (apihub) <span class="badge mono">Open Source</span></h3>
+<div class="stack mono">Node.js · Search</div>
+<p>Contributed a case-insensitive search fix for the quotes, books and YouTube endpoints (PR #357).</p>
+<a class="link mono" href="https://github.com/hiteshchoudhary/apihub/pull/357" target="_blank" rel="noopener">view pull request &rarr;</a>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="mono">contact</h2>
+<p>I am open to internship opportunities. Please reach out through <a class="link" href="https://www.linkedin.com/in/pratik-yadav-07a961398/" target="_blank" rel="noopener">LinkedIn</a> or explore my work on <a class="link" href="https://github.com/Pratik-y-SDE" target="_blank" rel="noopener">GitHub</a>.</p>
+</section>
+
+<footer class="mono">&copy; Pratik Yadav</footer>
+</main>
+</body>
+</html>
